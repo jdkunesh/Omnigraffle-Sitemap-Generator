@@ -1,4 +1,9 @@
--- Copyright (C) 2010  Jason Kunesh jason@fuzzymath.com
+#! /usr/bin/osascript
+
+(*
+-- Copyright (C) 2011  Nik Friedman TeBockhorst nik@inik.net
+-- Based on work copyright (C) 2010  Jason Kunesh jason@fuzzymath.com
+
 -- 
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -21,16 +26,27 @@
 
 -- v6. Removed check for file type XML
 -- v7. Applied GPL license
+-- v8. Major update, fork of original:
 
-(* EDITS by Nik:
+* Changed name to "Omnigraffle Sitemap Generator"
 
-Created "on run" handler to simplify code navigation
-Changed parent identification to work through full linked URLs rather than object name
-Fixed link creation so that objects hyperlink to the actual URL
-Changed link creation so that it properly handles non-http protocol handlers (https://, telnet:, etc.)
-Added option to ignore certain page names so that index/default pages may be optionally excluded, defaults provided by defaultPageNamesList property
-Added option to download each page's text into the OmniGraffle comments field, controlled by global property "getPageText" -- nice for searching
-Made new document use a defined template, controlled by property documentTemplate, and style objects accordingly
+* Converted code to plain text (.applescript)
+
+* Added !# so it will run from terminal
+
+* Created "on run" handler to simplify code navigation
+
+* Changed parent identification to work through full linked URLs rather than object name
+
+* Fixed link creation so that objects hyperlink to the actual URL
+
+* Changed link creation so that it properly handles non-http protocol handlers (https://, telnet:, etc.)
+
+* Added option to ignore certain page names so that index/default pages may be optionally excluded, defaults provided by defaultPageNamesList property
+
+* Added option to download each page's text into the OmniGraffle comments field, controlled by global property "getPageText" -- nice for searching
+
+* Made new document use a defined template, controlled by property documentTemplate, and style objects accordingly
 *)
 
 -- The default template and style to use for the sitemap, set to "Blank" for none. Must match the name of one of OG's templates exactly, including case.
@@ -127,8 +143,8 @@ on run
 			end ignoring
 			if isDefaultPage is false then
 				set cItem to uriProtocol & (items 1 through i of currentItems as string)
-
-					-- find the matching shape within the list, and make it the node parent node 				
+				
+				-- find the matching shape within the list, and make it the node parent node 				
 				if cItem is in nodeList then
 					-- nullop
 				else
