@@ -4,4 +4,10 @@ This is my first open source project, so be gentle. It's an AppleScript applicat
 
 I am open sourcing the software in the hopes that others make additions that make it useful.
 
-Good luck! Contact me at http://blog.fuzzymath.com/ or jason@fuzzymath.com with questions or suggestions.
+Good luck! Contact me at http://blog.fuzzymath.com/ or jdkunesh@gmail.com with questions or suggestions.
+
+Also, nikjft forked this codebase with something far more useful. I suggest you use his code, found here:
+
+https://github.com/nikjft/Omnigraffle-Sitemap-Generator/network
+
+If you are nikjft, contact me and I will get this merged so there's only one awesome source of Omnigraffle sitemapping Applescripting joy.
