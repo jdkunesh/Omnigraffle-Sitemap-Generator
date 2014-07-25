@@ -1,6 +1,6 @@
 Sitemap Wayfinding Applescript Generator: SWAG README file
 
-Please note: This script does not work Omnigraffle 6.
+Please note: This script does not work with Omnigraffle 6.
 
 This project is an AppleScript application that may be used with a sitemap.xml file and Omnigraffle Professional 5 (other versions may work, this is what I developed the script using). I am open sourcing the software in the hopes that others make additions that make it useful.
 
