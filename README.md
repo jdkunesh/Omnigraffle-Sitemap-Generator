@@ -27,7 +27,7 @@ There are a few options in the script you can modify in the source of the script
 
 ## History
 
-@jdkunesh started this project in 2010, and it was substantially improved by @nikjft. You can find [his version here](https://github.com/nikjft/Omnigraffle-Sitemap-Generator). This project has been open source since 2010, but I finally added a GNU 3.0 license file now in 2018.
+[@jdkunesh](https://github.com/jdkunesh/) started this project in 2010, and it was substantially improved by [@nikjft](https://github.com/nikjft/). You can find [his version here](https://github.com/nikjft/Omnigraffle-Sitemap-Generator). This project has been open source since 2010, but I finally added a GNU 3.0 license file now in 2018.
 
 Please feel free to fork to your heart's content if you have ideas for improvement, or submit a pull request and let's make it better together. Thanks!
 
