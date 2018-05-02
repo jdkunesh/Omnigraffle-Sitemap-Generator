@@ -1,9 +1,9 @@
 #! /usr/bin/osascript
 
 (*
--- Copyright (C) 2011  Nik Friedman TeBockhorst nik@inik.net
--- Based on work copyright (C) 2010  Jason Kunesh jason@fuzzymath.com
-
+-- Contributors
+-- Nik Friedman TeBockhorst nik@nik.net
+-- Jason Kunesh jdkunesh@gmail.com
 -- 
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -47,10 +47,12 @@
 * Added option to download each page's text into the OmniGraffle comments field, controlled by global property "getPageText" -- nice for searching
 
 * Made new document use a defined template, controlled by property documentTemplate, and style objects accordingly
+
 *)
 
 -- The default template and style to use for the sitemap, set to "Blank" for none. Must match the name of one of OG's templates exactly, including case.
-property documentTemplate : "Hierarchical"
+-- Hierarchical is another good option here.
+property documentTemplate : "Blank"
 
 -- set this to true to download web page content into the Notes field for each page object
 property getPageText : true
@@ -171,7 +173,7 @@ end run
 
 -- function that draws each type of box
 on makeShape(aURL)
-	tell application "OmniGraffle Professional 5"
+	tell application "OmniGraffle"
 		tell canvas of front window
 			set sText to last text item of aURL
 			set sNotes to ""
@@ -191,7 +193,7 @@ on makeShape(aURL)
 end makeShape
 
 on findShape(aURL)
-	tell application "OmniGraffle Professional 5"
+	tell application "OmniGraffle"
 		set matchingShapes to shapes of canvas of front window whose url is aURL
 		if (count of matchingShapes) is greater than 0 then
 			return item 1 of matchingShapes
@@ -200,7 +202,7 @@ on findShape(aURL)
 end findShape
 
 on drawConnectingLine(aSource, aDestination)
-	tell application "OmniGraffle Professional 5"
+	tell application "OmniGraffle"
 		tell aSource
 			set aLine to connect to aDestination
 		end tell
@@ -209,7 +211,7 @@ on drawConnectingLine(aSource, aDestination)
 end drawConnectingLine
 
 on makeNewSitemap()
-	tell application "OmniGraffle Professional 5"
+	tell application "OmniGraffle"
 		activate
 		make new document with properties {template:documentTemplate}
 		tell layout info of canvas of front window
@@ -223,14 +225,14 @@ on cleanupSitemap()
 	
 	-- Style all objects using UI scripting
 	tell application "System Events"
-		tell (first application process whose name is "Omnigraffle Professional")
+		tell (first application process whose name is "Omnigraffle")
 			set frontmost to true
 			click menu item "Select All" of menu "Edit" of menu bar 1
 			click menu item "Restyle Selected Objects" of menu "Format" of menu bar 1
 		end tell
 	end tell
 	
-	tell application "OmniGraffle Professional 5"
+	tell application "OmniGraffle"
 		
 		tell canvas of front window
 			layout
