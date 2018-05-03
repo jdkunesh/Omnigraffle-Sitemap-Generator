@@ -55,11 +55,10 @@
 property documentTemplate : "Blank"
 
 -- set this to true to download web page content into the Notes field for each page object
-property getPageText : true
+property getPageText : false
 
 -- These are the automatically entered default page names when prompted
 property defaultPageNamesList : {"index.html, index.php, default.html, index.htm, default.htm default.asp, default.aspx, index.jsp, default.jsp"}
-
 
 -- RUN HANDLER
 on run
